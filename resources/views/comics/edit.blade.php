@@ -9,7 +9,7 @@
     <h1>Modifica: {{$comic->title}}</h1>
 
     <div class="container">
-        <form action="{{route('comics.update'), $comic->id}}" method="POST">
+        <form action="{{route('comics.update', $comic->id)}}" method="POST">
             @csrf
             @method("PUT")
 
