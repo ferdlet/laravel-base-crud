@@ -6,9 +6,9 @@
 
 @section('pageContent')
 
-    <h1>Modifica: {{$comic->title}}</h1>
 
     <div class="container">
+        <h1>Modifica: {{$comic->title}}</h1>
         <form action="{{route('comics.update', $comic->id)}}" method="POST">
             @csrf
             @method("PUT")
@@ -19,7 +19,7 @@
             </div>
             <div class="form-group">
                 <label for="description">Descrizione</label>
-                <textarea class="form-control" id="description" name="description" rows="8" placeholder="Inserisci la descrizione" value="{{$comic->description}}"></textarea>
+                <textarea class="form-control" id="description" name="description" rows="8" placeholder="Inserisci la descrizione">{{$comic->description}}</textarea>
             </div>
             <div class="form-group">
                 <label for="image">Link Immagine</label>

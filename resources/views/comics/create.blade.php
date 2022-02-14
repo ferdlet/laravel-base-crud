@@ -6,7 +6,6 @@
 
 @section('pageContent')
 
-
     <div class="container">
         <form action="{{route('comics.store')}}" method="POST">
             @csrf
@@ -24,11 +23,11 @@
             </div>
             <div class="form-group">
                 <label for="price">Prezzo</label>
-                <input type="number" class="form-control" id="price" name="price" placeholder="Inserisci il prezzo">
+                <input type="number" step="0.01" class="form-control" id="price" name="price" placeholder="Inserisci il prezzo">
             </div>
             <div class="form-group">
                 <label for="series">Series</label>
-                <input type="number" class="form-control" id="series" name="series" placeholder="Inserisci la serie">
+                <input type="text" class="form-control" id="series" name="series" placeholder="Inserisci la serie">
             </div>
             <div class="form-group">
                 <label for="sale_date">sale date</label>
@@ -43,6 +42,15 @@
             </div>
             <button type="submit" class="btn btn-primary">Crea</button>
         </form>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
     </div>
 
 @endsection
