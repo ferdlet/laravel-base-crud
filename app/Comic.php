@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comic extends Model
 {
-    protected $guarded = [
+    protected $fillable = [
         'title',
         'description',
         'thumb' ,

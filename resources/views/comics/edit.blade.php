@@ -31,7 +31,7 @@
             </div>
             <div class="form-group">
                 <label for="series">Series</label>
-                <input type="number" class="form-control" id="series" name="series" placeholder="Inserisci la serie" value="{{$comic->series}}">
+                <input type="text" class="form-control" id="series" name="series" placeholder="Inserisci la serie" value="{{$comic->series}}">
             </div>
             <div class="form-group">
                 <label for="sale_date">sale date</label>
@@ -46,6 +46,15 @@
             </div>
             <button type="submit" class="btn btn-primary">Modifica</button>
         </form>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
     </div>
 
 @endsection
