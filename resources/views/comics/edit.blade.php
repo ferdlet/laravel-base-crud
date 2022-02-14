@@ -27,7 +27,7 @@
             </div>
             <div class="form-group">
                 <label for="price">Prezzo</label>
-                <input type="number" class="form-control" id="price" name="price" placeholder="Inserisci il prezzo" value="{{$comic->price}}">
+                <input type="number" step="0.01"  class="form-control" id="price" name="price" placeholder="Inserisci il prezzo" value="{{$comic->price}}">
             </div>
             <div class="form-group">
                 <label for="series">Series</label>
